@@ -4,7 +4,7 @@ const tools = [
     {
         title: "Syntaxia Tools",
         desc: "¡Haz tu vida como desarrollador más fácil con Syntaxia Tools! 🚀\nConvierte texto y archivos entre Base64, Hex y Bytes, genera claves seguras con SHA, embellece JSON y XML, crea QR y mucho más. Todo en un solo lugar, rápido y sin complicaciones. 💻🔒",
-        link: "https://syntaxia.mx/",
+        link: "https://tools.syntaxia.mx/",
     },
     {
         title: "Lazy Notes",
