@@ -1,74 +1,44 @@
-import type { MouseEvent } from "react";
-import logo from "../assets/logos/syntaxia.png";
+import logo from "../assets/logos/syntaxia-logo.png";
+import { navItems } from "../data/landingContent";
 
 export const Navbar = () => {
-    const scrollToSection = (id: string, e?: MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => {
-        e?.preventDefault();
-        const element = document.getElementById(id);
-        if (element) {
-            element.scrollIntoView({ behavior: "smooth" });
-        }
-    };
+  const scrollTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
 
-    return (
-        <nav
-            className="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-sm border-b border-zinc-800"
-            role="navigation"
-            aria-label="Menú principal"
+  return (
+    <header className="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-black/50 backdrop-blur-2xl">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
+        <button onClick={() => scrollTo("inicio")} className="flex items-center">
+          <img
+            src={logo}
+            alt="Syntaxia"
+            className="h-9 w-auto md:h-11"
+          />
+        </button>
+
+        <ul className="hidden items-center gap-2 rounded-full border border-white/10 bg-white/5 p-1 text-sm text-zinc-300 md:flex">
+          {navItems.map((item) => (
+            <li key={item.id}>
+              <button
+                onClick={() => scrollTo(item.id)}
+                className="rounded-full px-4 py-2 transition hover:bg-white/10 hover:text-white"
+              >
+                {item.label}
+              </button>
+            </li>
+          ))}
+        </ul>
+
+        <a
+          href="https://wa.me/525659747942"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-full bg-[#aa0000] px-5 py-2.5 text-sm font-bold text-white shadow-[0_0_35px_rgba(170,0,0,0.45)] transition hover:bg-red-700"
         >
-            <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-                {/* Logo con scroll al inicio y efecto hover */}
-                <button
-                    onClick={() => scrollToSection("hero")}
-                    aria-label="Ir al inicio"
-                    className="flex items-center focus:outline-none transition-transform transform hover:scale-110"
-                >
-                    <img src={logo} alt="Logo de Syntaxia" className="h-10 md:h-12 object-contain" />
-                </button>
-
-                <ul className="hidden md:flex gap-6 text-gray-300">
-                    <li>
-                        <a
-                            href="#hero"
-                            onClick={(e) => scrollToSection("hero", e)}
-                            className="hover:text-[#aa0000] transition-colors"
-                            aria-label="Ir a inicio"
-                        >
-                            Inicio
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="#services"
-                            onClick={(e) => scrollToSection("services", e)}
-                            className="hover:text-[#aa0000] transition-colors"
-                            aria-label="Ir a servicios"
-                        >
-                            Servicios
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="#tools"
-                            onClick={(e) => scrollToSection("tools", e)}
-                            className="hover:text-[#aa0000] transition-colors"
-                            aria-label="Ir a herramientas"
-                        >
-                            Herramientas
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="#contact"
-                            onClick={(e) => scrollToSection("contact", e)}
-                            className="hover:text-[#aa0000] transition-colors"
-                            aria-label="Ir a contacto"
-                        >
-                            Contacto
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    );
+          Cotizar
+        </a>
+      </nav>
+    </header>
+  );
 };

@@ -1,18 +1,22 @@
 import { Navbar } from "./components/Navbar";
-import { Hero } from "./components/Hero";
-import { Services } from "./components/Services";
-import { Tools } from "./components/Tools";
-import { Contact } from "./components/Contact";
+import { ScrollExperience } from "./components/ScrollExperience";
+import { ServicesSection } from "./components/ServicesSection";
+import { ProofSection } from "./components/ProofSection";
+import { ContactSection } from "./components/ContactSection";
 import { Footer } from "./components/Footer";
 
 function App() {
   return (
-    <div className="bg-black min-h-screen">
+    <div className="min-h-screen bg-black text-white">
       <Navbar />
-      <Hero />
-      <Services />
-      <Tools />
-      <Contact />
+
+      <main>
+        <ScrollExperience />
+        <ServicesSection />
+        <ProofSection />
+        <ContactSection />
+      </main>
+
       <Footer />
     </div>
   );

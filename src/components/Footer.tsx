@@ -1,75 +1,34 @@
-import { Instagram, Youtube, Twitter } from "lucide-react";
+import logo from "../assets/logos/syntaxia-logo.png";
+import { Instagram, Twitter, Youtube } from "lucide-react";
 import { SiTiktok, SiWhatsapp } from "react-icons/si";
-import Logo from "../assets/logos/syntaxia.png";
 
 export const Footer = () => {
     return (
-        <footer className="bg-black text-gray-400 py-10 px-6 border-t border-zinc-800">
-            <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+        <footer className="border-t border-white/10 bg-black px-5 py-10">
+            <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 md:flex-row">
+                <img src={logo} alt="Syntaxia" className="h-10 w-auto" />
 
-                {/* Logo con alt descriptivo */}
-                <div className="flex items-center gap-2">
-                    <img
-                        src={Logo}
-                        alt="Syntaxia - Desarrollo de Software a la Medida"
-                        className="h-10 md:h-12 object-contain"
-                    />
-                </div>
-
-                {/* Redes sociales con aria-label */}
-                <div className="flex gap-6 text-2xl">
-                    <a
-                        href="https://wa.me/5659747942"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Contacta con Syntaxia por WhatsApp"
-                        className="hover:text-green-500 transition-transform transform hover:scale-110"
-                    >
+                <div className="flex items-center gap-4 text-xl text-zinc-400">
+                    <a href="https://wa.me/525659747942" target="_blank" rel="noopener noreferrer" className="hover:text-green-400">
                         <SiWhatsapp />
                     </a>
-                    <a
-                        href="https://www.tiktok.com/@syntaxiamx"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Sigue a Syntaxia en TikTok"
-                        className="hover:text-pink-500 transition-transform transform hover:scale-110"
-                    >
+                    <a href="https://www.tiktok.com/@syntaxiamx" target="_blank" rel="noopener noreferrer" className="hover:text-pink-400">
                         <SiTiktok />
                     </a>
-                    <a
-                        href="https://www.youtube.com/@syntaxiaMx"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Sigue a Syntaxia en YouTube"
-                        className="hover:text-red-500 transition-transform transform hover:scale-110"
-                    >
+                    <a href="https://www.youtube.com/@syntaxiaMx" target="_blank" rel="noopener noreferrer" className="hover:text-red-400">
                         <Youtube />
                     </a>
-                    <a
-                        href="https://www.instagram.com/syntaxiamx/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Sigue a Syntaxia en Instagram"
-                        className="hover:text-pink-400 transition-transform transform hover:scale-110"
-                    >
+                    <a href="https://www.instagram.com/syntaxiamx/" target="_blank" rel="noopener noreferrer" className="hover:text-pink-300">
                         <Instagram />
                     </a>
-                    <a
-                        href="https://x.com/SyntaxiaMx"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Sigue a Syntaxia en X"
-                        className="hover:text-blue-400 transition-transform transform hover:scale-110"
-                    >
+                    <a href="https://x.com/SyntaxiaMx" target="_blank" rel="noopener noreferrer" className="hover:text-sky-400">
                         <Twitter />
                     </a>
                 </div>
-            </div>
 
-            <h3 className="sr-only">Contacto y redes sociales de Syntaxia</h3>
-
-            <div className="text-center text-sm text-gray-500 mt-6">
-                © {new Date().getFullYear()} Syntaxia MX. Todos los derechos reservados.
+                <p className="text-sm text-zinc-500">
+                    © {new Date().getFullYear()} Syntaxia MX. Todos los derechos reservados.
+                </p>
             </div>
         </footer>
     );
