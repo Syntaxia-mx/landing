@@ -146,8 +146,8 @@ export const ScrollExperience = () => {
                         <h2>La presentación de tu marca también puede impresionar.</h2>
 
                         <p>
-                            Conforme el usuario baja, la escena cambia, la laptop se mueve y los
-                            elementos visuales aparecen con más aire y mejor intención.
+                            Creamos experiencias visuales que hacen que tu sitio no solo se vea profesional,
+                            sino que también conecte, sorprenda y deje una impresión memorable en cada visitante.
                         </p>
                     </div>
                 </article>
